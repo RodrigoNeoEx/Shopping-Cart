@@ -177,3 +177,12 @@ async function getInput() {
     };
   });
 }
+
+window.onload = function onload() {
+  fetchAllProducts('computador');
+  clearCart();
+  loadStorageCart();
+  cartListener();
+  cartCounter();
+  getInput();
+};
