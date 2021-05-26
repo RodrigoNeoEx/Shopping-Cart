@@ -174,6 +174,7 @@ backdrop-filter: blur(5px);
 
 
 body {
+
   background-position: top;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -196,8 +197,8 @@ nav {
   position: sticky;
   top: 0;
   left: 2px;
-  width: 100vw;
-  height: 7vh;
+  width: 100%;
+  height: 60px;
   padding: 20px 0px;
   box-sizing: border-box;
   transition: 0.5s;
@@ -368,9 +369,10 @@ p.text:hover:before,
 @keyframes express { from { margin-left: -10%; } to { margin-left: 100%; }  }
 
 .hi-slide {
-  height: 35vh;
   position: relative;
-  width: 100vw;
+  width: 754px;
+  height: 292px;
+  margin: 20px auto 0;
 }
 
 ul.bgC {
@@ -402,7 +404,7 @@ ul.bgC {
 }
 
 .hi-slide .hi-prev {
-  left: 0;
+  left: -250px;
   z-index: 200;
 }
 
@@ -416,7 +418,7 @@ ul.bgC {
 
 
 .hi-slide .hi-next {
-  right: -0;
+  right: -250px;
   z-index: 200;
 
 }
@@ -431,20 +433,20 @@ ul.bgC {
 .hi-slide > ul {
   list-style: none;
   position: relative;
-  width: 95vw;
-  height: 40vh;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-  margin-top: 5vh;
+  width: 1331px;
+  height: 357px;
+  margin-top: -20px;
+  padding: 0;
+  margin-left: -300px;
+
 }
 
 .hi-slide > ul > li {
   overflow: hidden;
   position: absolute;
   z-index: 0;
-  text-decoration: none;
+  left: 377px;
+  top: 147px;
   width: 0;
   height: 0;
   margin: 0;
@@ -452,20 +454,19 @@ ul.bgC {
   border: 3px solid white;
   background-color: #333;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .hi-slide > ul > li > .img1 {
-  width: 100vw;
-  height: 30vh;
+  width: 100%;
+  height: 100%;
+  background-position: center;
 }
 
 .centerLinks {
   display: inline-flex;
   position: relative;
   left: 250px;
+
 }
 
 .links {
