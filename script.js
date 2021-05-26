@@ -23,3 +23,32 @@ function createProductImageElement(imageSource) {
   img.src = imageSource;
   return img;
 }
+
+function createProductItemElement({ sku, name, image, salePrice }) {
+  const section = document.createElement('section');
+  section.className = 'item';
+  const divBox = document.createElement('div');
+  divBox.className = 'box';
+  section.appendChild(divBox);
+  const divContent = document.createElement('div');
+  divContent.className = 'content';
+  divBox.appendChild(divContent);
+  section.appendChild(createCustomElement('span', 'item__sku', sku));
+  divContent.appendChild(createCustomElement('span', 'item__title revertText ', name));
+  divContent.appendChild(createCustomElement('span', 'item__title revertText ', `Preço: R$${salePrice.toFixed(2)}`))
+  section.appendChild(createProductImageElement(image));
+  divContent.appendChild(createCustomElement('button', 'item__add revertText', 'Adicionar ao carrinho!'));
+  return section;
+}
+
+function getSkuFromProductItem(item) {
+  return item.querySelector('span.item__sku').innerText;
+}
+
+async function fetchItemById(itemId) {
+  createLoadingSpan();
+  const endPoint = `https://api.mercadolibre.com/items/${itemId}`;
+  const response = await fetch(endPoint);
+  removeLoadingSpan();
+  return response.json();
+}
